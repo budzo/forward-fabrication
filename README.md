@@ -1,3 +1,1 @@
-# wp-gulp
-
-WordPress Boilerplate w/ Gulp
+# Forward Fabrication and Mechanical LLC WordPress Theme
