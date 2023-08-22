@@ -9,6 +9,7 @@
     "gulp-connect": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^1.0.0"
   },

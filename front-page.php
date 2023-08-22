@@ -12,10 +12,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8 mx-auto">
-                    <h1>Welcome to Forward Fabrication & Mechanical, LLC</h1>
-                    <p>
-                        Forward Fabrication and Mechanical LLC is a Green Bay, WI - Based shop dedicated to providing high quality custom fabrication and mechanical solutions on time and with competitive pricing. With over a decade of experience in the industry, we have the knowledge, experience and desire to provide value added service to our customers.
-                    </p>
+                    <h1><?php the_title(); ?></h1>
+                    <?php the_content(); ?>
                 </div>
             </div>
         </div>

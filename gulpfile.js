@@ -1,5 +1,6 @@
 const { src, dest, watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
 const minifyCSS = require('gulp-csso');
 const prefix = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
@@ -16,6 +17,7 @@ function css() {
         .pipe(sass())
         .pipe(minifyCSS())
         .pipe(prefix(prefixerOptions))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('./scss/'), { sourcemaps: true })
         .pipe(browserSync.stream());
 }
