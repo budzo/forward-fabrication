@@ -1,4 +1,6 @@
 <?php
+add_theme_support( 'title-tag' );
+add_theme_support( 'post-thumbnails' );
 add_filter('wpcf7_form_elements', function($content) {
     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
 
@@ -16,15 +18,15 @@ function jquery_enqueue() {
 if (!is_admin()) add_action("wp_enqueue_scripts", "jquery_enqueue", 11);
 add_filter('wpcf7_autop_or_not', '__return_false');
 function google_fonts() {
-    wp_enqueue_style( 'google-fonts-roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap', false );
-    wp_enqueue_style( 'google-fonts-roboto-slab', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap', false );
+    wp_enqueue_style( 'google-fonts-kdam-thmor-pro', 'https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap', false );
+    wp_enqueue_style( 'google-fonts-bricolage-grotesque', 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,700&display=swap', false );
 }
 add_action( 'wp_enqueue_scripts', 'google_fonts' );
 function add_styles() {
     // wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css', array(), null);
     wp_register_style('main-styles', get_stylesheet_directory_uri() . '/scss/style.css', array(), '', 'all');
     wp_enqueue_style('main-styles');
-    wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', false, null, true);
+    wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js', false, null, true);
     wp_enqueue_script('forwardfab', get_stylesheet_directory_uri() . '/js/scripts.min.js', false, null, true);
 }
 function my_deregister_scripts() {
@@ -32,6 +34,17 @@ function my_deregister_scripts() {
 }
 add_action('wp_footer', 'my_deregister_scripts');
 add_action('wp_enqueue_scripts', 'add_styles');
+
+if( function_exists('acf_add_options_page') ) {
+  acf_add_options_page();
+}
+
+// Remove Gutenberg Block Library CSS from loading on the frontend
+function remove_wp_block_library_css(){
+  wp_dequeue_style( 'wp-block-library' );
+  wp_dequeue_style( 'wp-block-library-theme' );
+ } 
+ add_action( 'wp_enqueue_scripts', 'remove_wp_block_library_css', 100 );
 
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
