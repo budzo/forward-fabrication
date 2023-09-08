@@ -1,6 +1,6 @@
 .navbar {
     background: $primary;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
         background: linear-gradient(180deg, $primary 0%, $primary 50%, #791114 50%, rgba(121, 17, 20, 0.00) 100%);
     }
     &-nav {
@@ -14,13 +14,22 @@
             }
         }
         &-link {
-            font-size: rfs-value(24px);
+            font-size: rfs-value(20px);
             text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+            @include media-breakpoint-up(lg) {
+                font-size: rfs-value(24px);
+            }
+        }
+    }
+    &-collapse {
+        @include media-breakpoint-down(lg) {
+            margin-top: rfs-value(18px);
         }
     }
     &-toggler {
         display: flex;
         align-items: center;
+        border: none;
         .navbar-toggler-icon {
             margin-right: rfs-value(24px);
         }
