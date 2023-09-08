@@ -1,0 +1,30 @@
+.headerRow {
+    &__contact {
+        background-color: $black;
+        color: $white;
+        padding: 1rem 0;
+        font-size: rfs-value(18px);
+        a {
+            color: $white;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__icon {
+        margin-right: rfs-value(18px);
+        path {
+            fill: $white;
+        }
+    }
+    &__email {
+        .headerRow {
+            &__icon {
+                @include media-breakpoint-up(md) {
+                    margin-left: rfs-value(98px);
+                }
+            }
+        }
+    }
+}

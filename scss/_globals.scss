@@ -2,6 +2,27 @@ section {
     padding: rfs-value(64px) 0;
 }
 
+p {
+    font-size: rfs-value(18px);
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: $primary;
+    margin-bottom: rfs-value(24px);
+}
+
+.logoRow {
+    background-color: $white;
+}
+
+.page-wrapper {
+    background-color: #f9f9f9;
+}
+
+form {
+    margin-top: rfs-value(36px);
+}
+
+#your-message {
+    height: rfs-value(10rem);
 }

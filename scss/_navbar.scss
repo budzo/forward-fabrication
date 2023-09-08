@@ -1,5 +1,33 @@
 .navbar {
+    background: $primary;
+    @include media-breakpoint-up(md) {
+        background: linear-gradient(180deg, $primary 0%, $primary 50%, #791114 50%, rgba(121, 17, 20, 0.00) 100%);
+    }
     &-nav {
         font-family: $headings-font-family;
+    }
+    .nav {
+        &-item {
+            margin-right: 4.75rem;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &-link {
+            font-size: rfs-value(24px);
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+    &-toggler {
+        display: flex;
+        align-items: center;
+        .navbar-toggler-icon {
+            margin-right: rfs-value(24px);
+        }
+        &[aria-expanded=true] {
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23FFFFFF' class='bi bi-x-lg' viewBox='0 0 16 16'%3E%3Cpath d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z'/%3E%3C/svg%3E");
+            }
+        }
     }
 }

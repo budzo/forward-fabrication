@@ -1,0 +1,36 @@
+.footerRow {
+    background-color: #222;
+    color: $white;
+    padding: 2.25rem 0;
+    &__left {
+        display: block;
+    }
+    &__right {
+        display: block;
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__by-line {
+        @include media-breakpoint-up(md) {
+            margin-right: rfs-value(24px);
+        }
+    }
+    &__feldspar-creative {
+        svg {
+            width: 100%;
+            max-width: 335px;
+            path {
+                transition: fill .3s ease;
+                fill: $white;
+            }
+            &:hover,
+            &:focus {
+                path {
+                    fill: lighten($primary, 25%);
+                }
+            }
+        }
+    }
+}
