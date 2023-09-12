@@ -26,7 +26,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-5 col-xl-4 mb-4 mb-lg-0 text-center text-lg-start">
                         <div class="servicesRow__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/fabrication-img.jpg" alt="Welder" class="img-fluid">
+                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/fabrication-img.jpg" alt="Welder" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-12 col-lg-6">
