@@ -35,6 +35,19 @@ function my_deregister_scripts() {
 add_action('wp_footer', 'my_deregister_scripts');
 add_action('wp_enqueue_scripts', 'add_styles');
 
+function gtag() { ?>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8EGXHWJM3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K8EGXHWJM3');
+  </script>
+<?php }
+add_action('wp_head', 'gtag');
+
 if( function_exists('acf_add_options_page') ) {
   acf_add_options_page();
 }
